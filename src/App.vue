@@ -17,7 +17,12 @@
         <a href="https://www.linkedin.com/in/cody-pinkston/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
         <span class="icon-text">LinkedIn</span>
       </div>
-    </div> 
+      <div class="icon-wrapper">
+        <a href="mailto:c.piknston2004@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+        <span class="icon-text">Email</span>
+      </div> 
+    </div>
+    
     <div class="buttons">
       <button>About</button>
       <button>Projects</button>
