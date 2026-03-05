@@ -6,7 +6,7 @@
     <h4>Full Stack Developer</h4>
     <div class="brand-icons">
       <div class="icon-wrapper">  
-        <a href="/public/Pinkston_Resume.pdf" target="_blank"><i class="fa-solid fa-file-lines"></i></a>
+        <a href="Pinkston_Resume.pdf" target="_blank"><i class="fa-solid fa-file-lines"></i></a>
         <span class="icon-text">Resume</span>
       </div>
       <div class="icon-wrapper">
