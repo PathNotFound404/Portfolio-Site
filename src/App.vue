@@ -24,14 +24,14 @@
         </div>
       </div> 
       <div class="buttons">
-        <button>About</button>
+        <a href="#about"><button>About</button></a>
         <button>Projects</button>
         <button>Contact</button>
       </div>
     </div>
   </div>
 
-  <div class="about-section">
+  <div class="about-section" id="about">
     <h2>About Me</h2>
     <p>
       I am a full stack developer with a passion for creating dynamic and responsive web applications. With experience in both front-end and back-end development, I enjoy working on projects that challenge my skills and allow me to learn new technologies. I am dedicated to writing clean, efficient code and collaborating with teams to deliver high-quality products.

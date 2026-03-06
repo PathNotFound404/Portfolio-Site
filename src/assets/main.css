@@ -16,6 +16,10 @@ body {
     background-size: 100% auto; 
 }
 
+html, body {
+    scroll-behavior: smooth;
+}
+
 .name {
     display: flex;
     flex-direction: column;
