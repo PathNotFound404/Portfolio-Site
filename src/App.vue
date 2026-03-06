@@ -18,7 +18,7 @@
         <span class="icon-text">LinkedIn</span>
       </div>
       <div class="icon-wrapper">
-        <a href="mailto:c.piknston2004@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+        <a href="mailto:c.pinkston2004@gmail.com"><i class="fa-solid fa-envelope"></i></a>
         <span class="icon-text">Email</span>
       </div> 
     </div>
