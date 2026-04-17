@@ -1,4 +1,4 @@
-<script setup></script>
+
 
 <template>
   <div class="name">
@@ -24,13 +24,28 @@
     </div>
     
     <div class="buttons">
-      <button>About</button>
-      <button>Projects</button>
-      <button>Contact</button>
+      <button @click="aboutOpen.open()">About</button>
+      <button @click="projectsOpen.open()">Projects</button>
+      <button @click="contactOpen.open()">Contact</button>
     </div>
   </div>
-  
-  
+
+  <AboutPannel ref="aboutOpen" />
+  <ProjectsPannel ref="projectsOpen" />
+  <ContactPannel ref="contactOpen" />
+
 </template>
+
+<script setup>
+import { ref } from 'vue'
+import AboutPannel from './AboutPannel.vue'
+import ProjectsPannel from './ProjectsPannel.vue'
+import ContactPannel from './ContactPannel.vue'
+
+const aboutOpen = ref(null)
+const projectsOpen = ref(null)
+const contactOpen = ref(null)
+
+</script>
 
 <style scoped></style>
