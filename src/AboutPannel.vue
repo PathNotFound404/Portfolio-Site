@@ -6,7 +6,10 @@
                 <img src="@/assets/Pinkston_Corvette.jpeg" alt="Profile Picture" class="profile-pic" />
                 <div class="about-text">
                     <p>
-                        Hello! I'm Cody, a passionate full stack developer with a love for creating innovative and efficient web applications. 
+                      I am someone who is endlessly curious. I have always been drawn to taking things apart,
+                      figuring out how they work, and putting them back together (hopefully).
+                      That drive is at the heart of my passion for working on cars. The 1985 Chevy Corvette you see pictured is a testament to that,
+                      I personally handled everything from diagnostics to repairs, stopping just short of a full engine pull.
                     </p>
                 </div>
             </div>
@@ -72,7 +75,7 @@ h1 {
 p {
     color: #fff;
     margin: 0;
-    font-size: 22px;
+    font-size: 1rem;
 }
 
 @media (max-width: 900px) {
