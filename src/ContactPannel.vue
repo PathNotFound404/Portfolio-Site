@@ -58,10 +58,10 @@ h1 {
 }
 
 .intro {
-	color: rgba(255, 255, 255, 0.84);
+	color: rgba(255, 255, 255, 1);
 	margin: 18px 0 0;
 	max-width: 820px;
-	font-size: clamp(1.05rem, 2vw, 1.25rem);
+	font-size: 1.2rem;
 	line-height: 1.55;
 }
 
