@@ -61,6 +61,14 @@ const projects = [
     description: 'Yes I even built this site and you can view the code on GitHub.',
     github: 'https://github.com/PathNotFound404/Portfolio-Site',
     preferredLink: 'github'
+  },
+  {
+    id: 6,
+    name: 'Project Pulse',
+    tags: ['Vue', "Springboot", 'Azure', "Docker", "CI/CD"],
+    description: 'A full-stack peer evaluation platform built for TCU\'s CS senior design program, replacing manual form workflows with automated score aggregation, real-time feedback, and role-based dashboards.',
+    github: 'https://github.com/PathNotFound404/Project-Pulse-Web-Tech-Final-Project',
+    preferredLink: 'github'
   }
 ]
 
