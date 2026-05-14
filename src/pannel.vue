@@ -54,7 +54,7 @@
   
   background: #070707;
   border-top: 1px solid rgb(255, 255, 255);
-  padding: 24px;
+  padding: 24px 24px 100px 24px;
   z-index: 100;
   box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.15);
   overflow-y: auto;   /* scroll if content is taller than the panel */
@@ -62,7 +62,7 @@
   /* add these */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
