@@ -8,7 +8,7 @@ export function getStarfieldOptions(reducedMotion) {
     pauseOnOutsideViewport: true,
     particles: {
       number: {
-        value: reducedMotion ? 20 : 60,
+        value: reducedMotion ? 40 : 140,
         density: { enable: true },
       },
       color: { value: '#ffffff' },
@@ -58,7 +58,7 @@ export function getStarfieldOptions(reducedMotion) {
         maxWidth: 900,
         options: {
           particles: {
-            number: { value: reducedMotion ? 15 : 30 },
+            number: { value: reducedMotion ? 25 : 70 },
             links: { distance: 100 },
           },
         },
