@@ -1,6 +1,8 @@
 
 
 <template>
+  <StarField />
+
   <div class="name">
     <h1>Cody Pinkston</h1>
     <h4>Full Stack Developer</h4>
@@ -38,6 +40,7 @@
 
 <script setup>
 import { ref } from 'vue'
+import StarField from './StarField.vue'
 import AboutPannel from './AboutPannel.vue'
 import ProjectsPannel from './ProjectsPannel.vue'
 import ContactPannel from './ContactPannel.vue'
