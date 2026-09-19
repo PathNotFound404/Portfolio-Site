@@ -185,8 +185,10 @@ onBeforeUnmount(() => window.removeEventListener('keydown', onKeydown))
   gap: 8px;
   overflow-x: auto;
   flex-shrink: 0;
-  padding-bottom: 2px;
+  scrollbar-width: none;
 }
+
+.thumbs::-webkit-scrollbar { display: none; }
 
 .thumb {
   position: relative;

@@ -55,7 +55,7 @@ const projects = [
   {
     id: 1,
     name: 'CUDA Image Processor',
-    tags: ['Cuda', 'C'],
+    tags: ['Cuda', 'C', `Parallel Programming`, 'Image Processing'],
     description: 'CUDA-Accelerated Image Processing is a high-performance C++/CUDA project that applies common image filters to P6 PPM images using GPU parallelism. It includes effects like channel dropping, blur, sharpen, and Sobel edge detection, and is designed to compare GPU processing against CPU results for both correctness and performance. The tool reports timing for host-to-device transfer, kernel execution, and device-to-host transfer, making it useful for understanding CUDA workflow efficiency in real image-processing tasks. Overall, this project demonstrates practical GPU acceleration, memory management, and filter implementation in a clean command-line workflow. To Learn more about the project, check out the GitHub repository.',
     github: 'https://github.com/PathNotFound404/CUDA-Accelerated-Image-Processing',
     preferredLink: 'github',
