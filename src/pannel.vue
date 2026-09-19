@@ -1,11 +1,8 @@
 <template>
   <Transition name="slide-up">
-    <div 
-        v-if="modelValue" 
+    <div
+        v-if="modelValue"
         class="panel"
-        ref="panelRef"
-        tabindex="-1"
-        @focusout="onFocusOut"
         >
         <button class="chevron-button" @click="closePanel">
           <i class="fas fa-chevron-down"></i>
@@ -16,25 +13,8 @@
 </template>
 
 <script setup>
-    import { ref, watch, nextTick } from 'vue'
-
-    const props = defineProps({ modelValue: Boolean })
+    defineProps({ modelValue: Boolean })
     const emit = defineEmits(['update:modelValue'])
-
-    const panelRef = ref(null)
-
-    // When panel opens, focus it so focusout works
-    watch(() => props.modelValue, (val) => {
-    if (val) {
-        nextTick(() => panelRef.value?.focus())
-    }
-    })
-
-    function onFocusOut(event) {
-        if (!panelRef.value?.contains(event.relatedTarget)) {
-        emit('update:modelValue', false)
-  }
-}
 
   function closePanel() {
     emit('update:modelValue', false)

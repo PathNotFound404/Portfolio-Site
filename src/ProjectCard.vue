@@ -1,44 +1,50 @@
 <template>
-  <div class="project-card">
+  <div
+    ref="cardRef"
+    class="project-card"
+    :class="{ 'is-hidden': hidden }"
+    role="button"
+    tabindex="0"
+    :aria-label="`${project.name}, open details`"
+    @click="select"
+    @keydown.enter.self.prevent="select"
+    @keydown.space.self.prevent="select"
+  >
     <h3>{{ project.name }}</h3>
     <div class="tags">
       <span v-for="tag in project.tags" :key="tag" class="tag">{{ tag }}</span>
     </div>
     <p>{{ project.description }}</p>
-    <a :href="linkHref" target="_blank" class="project-link">
-      <i :class="linkIconClass"></i> {{ linkLabel }}
-    </a>
+    <div class="card-footer">
+      <a :href="linkHref" target="_blank" class="project-link" @click.stop>
+        <i :class="linkIconClass"></i> {{ linkLabel }}
+      </a>
+      <span v-if="project.media?.length" class="media-count">
+        <i class="fa-solid fa-images"></i> {{ project.media.length }}
+      </span>
+    </div>
   </div>
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { ref } from 'vue'
+import { useProjectLink } from './useProjectLink.js'
 
 const props = defineProps({
-  project: Object
+  project: Object,
+  hidden: Boolean
 })
 
-const selectedLinkType = computed(() => {
-  if (props.project?.preferredLink === 'live' && props.project?.live) return 'live'
-  if (props.project?.preferredLink === 'github' && props.project?.github) return 'github'
-  if (props.project?.live) return 'live'
-  return 'github'
-})
+const emit = defineEmits(['select'])
 
-const linkHref = computed(() => {
-  if (selectedLinkType.value === 'live') return props.project?.live
-  return props.project?.github
-})
+const cardRef = ref(null)
+const { linkHref, linkLabel, linkIconClass } = useProjectLink(() => props.project)
 
-const linkLabel = computed(() => {
-  if (selectedLinkType.value === 'live') return 'View Live App'
-  return 'View on GitHub'
-})
+function select() {
+  emit('select', props.project, cardRef.value)
+}
 
-const linkIconClass = computed(() => {
-  if (selectedLinkType.value === 'live') return 'fa-solid fa-arrow-up-right-from-square'
-  return 'fa-brands fa-github'
-})
+defineExpose({ el: cardRef })
 </script>
 
 <style scoped>
@@ -54,9 +60,17 @@ const linkIconClass = computed(() => {
   width: 100%;
   min-height: 240px;
   box-sizing: border-box;
+  cursor: pointer;
 }
 
 .project-card:hover { border-color: #444; }
+
+.project-card:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.project-card.is-hidden { visibility: hidden; }
 
 h3 {
   font-size: 20px;
@@ -93,10 +107,17 @@ p {
   -webkit-box-orient: vertical;
 }
 
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
 .project-link {
   display: inline-flex;
   align-items: center;
-  align-self: flex-start; 
+  align-self: flex-start;
   gap: 6px;
   font-size: 14px;
   color: #666;
@@ -105,4 +126,12 @@ p {
 }
 
 .project-link:hover { color: #fff; }
+
+.media-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #666;
+}
 </style>
