@@ -76,7 +76,10 @@ const projects = [
     tags: ['Java', 'Maven', 'Swing', 'Web Scraping'],
     description: 'Desktop application that gets user data from Letterboxd and uses it to generate movie recommendations based on their watch history and ratings.',
     github: 'https://github.com/PathNotFound404/Movie-Picker',
-    preferredLink: 'github'
+    preferredLink: 'github',
+    media : [
+        { type: 'video', provider: 'youtube', id: '3zIoOIVOK14', title: 'Demo' },
+    ]
   },
   {
     id: 3,
