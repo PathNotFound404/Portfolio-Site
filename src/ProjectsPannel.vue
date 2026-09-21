@@ -86,7 +86,7 @@ const projects = [
     name: 'C++ Shell',
     tags: ['C++'],
     description: 'A simple shell implementation in C++ with basic command execution and pipeline support.',
-    github: 'https://github.com/PathNotFound404/C++-Shell',
+    github: 'https://github.com/PathNotFound404/C_Shell',
     preferredLink: 'github'
   },
   {
