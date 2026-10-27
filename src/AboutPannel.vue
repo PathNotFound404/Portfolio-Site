@@ -5,7 +5,9 @@
             <div class="content">
                 <div class="row">
                   <div class="pic-wrapper">
-                    <img src="@/assets/Pinkston_Corvette.jpeg" alt="Profile Picture" class="profile-pic" />
+                    <div class="pic-frame" :class="{ loaded: loaded.corvette }" style="--ratio: 7353 / 4904">
+                      <img src="@/assets/Pinkston_Corvette.jpeg" alt="Profile Picture" class="profile-pic" @load="loaded.corvette = true" />
+                    </div>
                   </div>
                     <div class="about-text">
                       <p>
@@ -29,7 +31,9 @@
                     </p>
                   </div>
                   <div class="pic-wrapper">
-                    <img src="@/assets/Pinkston_Headshot.jpeg" alt="Profile Headshot" class="profile-pic" />
+                    <div class="pic-frame" :class="{ loaded: loaded.headshot }" style="--ratio: 4931 / 6903">
+                      <img src="@/assets/Pinkston_Headshot.jpeg" alt="Profile Headshot" class="profile-pic" @load="loaded.headshot = true" />
+                    </div>
                   </div>
                 </div>
             </div>
@@ -39,9 +43,11 @@
 
 <script setup>
     import Panel from './pannel.vue'
-    import { ref } from 'vue'
+    import { ref, reactive } from 'vue'
 
     const  isOpen = ref(false);
+    // Tracks when each photo finishes loading so the gray placeholder can fade out
+    const loaded = reactive({ corvette: false, headshot: false });
 
     defineExpose({ open: () => isOpen.value = true })
 
@@ -94,13 +100,31 @@ h1 {
   align-items: center;
 }
 
+/* Gray placeholder sized to the photo's aspect ratio so space is reserved before it loads */
+.pic-frame {
+  aspect-ratio: var(--ratio);
+  width: min(100%, calc(60vh * var(--ratio)));
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #3a3a3a;
+  transition: background-color 0.6s ease;
+}
+
+.pic-frame.loaded {
+  background-color: transparent;
+}
+
 .profile-pic {
-  max-width: 100%;
-  max-height: 60vh;
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
-  border-radius: 12px;  /* put it directly on the img, not the wrapper */
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.pic-frame.loaded .profile-pic {
+  opacity: 1;
 }
 
 .about-text {
@@ -128,9 +152,8 @@ p {
     flex-direction: column-reverse;
   }
 
-  .profile-pic {
-    max-width: 92vw;
-    max-height: 58vh;
+  .pic-frame {
+    width: min(92vw, calc(58vh * var(--ratio)));
   }
 
   .about-text {
