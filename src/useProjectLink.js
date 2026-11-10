@@ -25,5 +25,15 @@ export function useProjectLink(getProject) {
     return 'fa-brands fa-github'
   })
 
-  return { linkHref, linkLabel, linkIconClass }
+  const download = computed(() => {
+    const dl = getProject()?.download
+    if (!dl?.url) return null
+    return {
+      href: dl.url,
+      label: dl.label ?? 'Download for macOS',
+      iconClass: 'fa-brands fa-apple'
+    }
+  })
+
+  return { linkHref, linkLabel, linkIconClass, download }
 }

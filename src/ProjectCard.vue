@@ -16,9 +16,14 @@
     </div>
     <p>{{ project.description }}</p>
     <div class="card-footer">
-      <a :href="linkHref" target="_blank" class="project-link" @click.stop>
-        <i :class="linkIconClass"></i> {{ linkLabel }}
-      </a>
+      <div class="links">
+        <a :href="linkHref" target="_blank" rel="noopener noreferrer" class="project-link" @click.stop>
+          <i :class="linkIconClass"></i> {{ linkLabel }}
+        </a>
+        <a v-if="download" :href="download.href" target="_blank" rel="noopener noreferrer" class="project-link" @click.stop>
+          <i :class="download.iconClass"></i> {{ download.label }}
+        </a>
+      </div>
       <span v-if="project.media?.length" class="media-count">
         <i class="fa-solid fa-images"></i> {{ project.media.length }}
       </span>
@@ -38,7 +43,7 @@ const props = defineProps({
 const emit = defineEmits(['select'])
 
 const cardRef = ref(null)
-const { linkHref, linkLabel, linkIconClass } = useProjectLink(() => props.project)
+const { linkHref, linkLabel, linkIconClass, download } = useProjectLink(() => props.project)
 
 function select() {
   emit('select', props.project, cardRef.value)
@@ -112,6 +117,12 @@ p {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
 }
 
 .project-link {
