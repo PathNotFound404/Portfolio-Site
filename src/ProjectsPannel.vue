@@ -71,6 +71,15 @@ const projects = [
     ]
   },
   {
+    id: 7,
+    name: 'USPTO Patent Intelligence',
+    tags: ['Python', 'DuckDB', 'PySide6', 'Matplotlib', 'macOS'],
+    description: 'A macOS desktop app built as a team course project that turns the USPTO\'s weekly office action bulk data into charts of patent examination activity. It imports and validates the raw files, builds a staged DuckDB dataset, creates visualizations by document code, technology center, art unit, and rejection type, lets you trace any chart or bar back to its source office action records, and exports labeled PNGs. Everything runs locally with no network connection.',
+    github: 'https://github.com/PathNotFound404/cosc-40943-team-06-USPTO',
+    preferredLink: 'github',
+    download: { url: 'https://github.com/PathNotFound404/cosc-40943-team-06-USPTO/releases/latest' }
+  },
+  {
     id: 2,
     name: 'Letterboxd Movie Recommendations',
     tags: ['Java', 'Maven', 'Swing', 'Web Scraping'],

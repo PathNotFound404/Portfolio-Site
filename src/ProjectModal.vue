@@ -26,9 +26,14 @@
                 <span v-for="tag in project.tags" :key="tag" class="tag">{{ tag }}</span>
               </div>
               <p>{{ project.description }}</p>
-              <a :href="linkHref" target="_blank" rel="noopener noreferrer" class="project-link">
-                <i :class="linkIconClass"></i> {{ linkLabel }}
-              </a>
+              <div class="links">
+                <a :href="linkHref" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <i :class="linkIconClass"></i> {{ linkLabel }}
+                </a>
+                <a v-if="download" :href="download.href" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <i :class="download.iconClass"></i> {{ download.label }}
+                </a>
+              </div>
             </section>
           </div>
         </div>
@@ -54,7 +59,7 @@ const EASE = 'cubic-bezier(0.32, 0.72, 0, 1)'
 
 const titleId = `project-modal-title-${props.project.id}`
 const hasMedia = computed(() => props.project.media?.length > 0)
-const { linkHref, linkLabel, linkIconClass } = useProjectLink(() => props.project)
+const { linkHref, linkLabel, linkIconClass, download } = useProjectLink(() => props.project)
 
 const backdropRef = ref(null)
 const dialogRef = ref(null)
@@ -310,6 +315,12 @@ p {
   color: #999;
   line-height: 1.7;
   margin: 0;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
 }
 
 .project-link {
