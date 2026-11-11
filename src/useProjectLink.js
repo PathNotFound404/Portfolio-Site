@@ -30,8 +30,8 @@ export function useProjectLink(getProject) {
     if (!dl?.url) return null
     return {
       href: dl.url,
-      label: dl.label ?? 'Download for macOS',
-      iconClass: 'fa-brands fa-apple'
+      label: dl.label ?? 'Download',
+      iconClass: 'fa-solid fa-download'
     }
   })
 
