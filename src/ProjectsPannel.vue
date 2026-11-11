@@ -77,7 +77,17 @@ const projects = [
     description: 'A desktop app for macOS and Windows built as a team course project that turns the USPTO\'s weekly office action bulk data into charts of patent examination activity. It imports and validates the raw files, builds a staged DuckDB dataset, creates visualizations by document code, technology center, art unit, and rejection type, lets you trace any chart or bar back to its source office action records, and exports labeled PNGs. Everything runs locally with no network connection.',
     github: 'https://github.com/PathNotFound404/cosc-40943-team-06-USPTO',
     preferredLink: 'github',
-    download: { url: 'https://github.com/PathNotFound404/cosc-40943-team-06-USPTO/releases/latest' }
+    download: { url: 'https://github.com/PathNotFound404/cosc-40943-team-06-USPTO/releases/latest' },
+    media: [
+        { type: 'image', src: '/projects/USPTO/Visulization Screen.png', alt: 'Visualization Screen' },
+        { type: 'image', src: '/projects/USPTO/Detail Screen.png', alt: 'Detail Screen' },
+        { type: 'image', src: '/projects/USPTO/Office actions by Document Code.png', alt: 'Office actions by Document Code' },
+        { type: 'image', src: '/projects/USPTO/Office actions by Technology Center.png', alt: 'Office actions by Technology Center' },
+        { type: 'image', src: '/projects/USPTO/Office actions by Art Unit, Technology Center 1600.png', alt: 'Office actions by Art Unit, Technology Center 1600' },
+        { type: 'image', src: '/projects/USPTO/Rejections by type.png', alt: 'Rejections by type' },
+        { type: 'image', src: '/projects/USPTO/Rejection types by Technology Center.png', alt: 'Rejection types by Technology Center' },
+        { type: 'image', src: '/projects/USPTO/Document Codes by Technology Center.png', alt: 'Document Codes by Technology Center' },
+    ]
   },
   {
     id: 2,
